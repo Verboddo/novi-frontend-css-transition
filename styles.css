@@ -9,7 +9,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
+/*Middelste balk*/
 #menu {
     background-color: #D84282;
     position: relative;
@@ -17,7 +17,7 @@
     height: var(--menu-bar-height);
     transition: var(--menu-transition);
 }
-
+/*Onderste en bovenste balk*/
 #menu::before,
 #menu::after {
     background-color: #D84282;
