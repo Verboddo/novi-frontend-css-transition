@@ -1,6 +1,13 @@
 :root {
     --menu-bar-width: 60px;
     --menu-bar-height: 10px;
+    --menu-transition: ease-in-out 0.5s;
+}
+
+#container {
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #menu {
@@ -8,7 +15,7 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    transition: var(--menu-transition);
 }
 
 #menu::before,
@@ -19,6 +26,7 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+    transition: var(--menu-transition);
 }
 
 #menu::before {
@@ -31,3 +39,17 @@
     top: 20px;
 }
 
+/*Target top line to move*/
+#container:hover #menu::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+/*Target bottom line to move*/
+#container:hover #menu::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+/*Target middle line to disappear*/
+#container:hover #menu {
+    background-color: transparent;
+}
